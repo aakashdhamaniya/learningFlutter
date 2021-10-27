@@ -1,0 +1,88 @@
+import 'package:flutter/material.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        title: Text("My app"),
+
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: SingleChildScrollView(
+          child: Card(
+
+              color: Colors.yellow,
+            child:Column(
+              children: [
+                Image.asset("assets/photo.jpg"),
+                SizedBox(height: 20,),
+
+                Text("Click me to chainge",style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),),
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: "Enter somthing here",labelText: "Name",
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      drawer: Drawer(
+        child:ListView(
+          padding: EdgeInsets.zero,
+          children: [
+           // DrawerHeader(
+           //    child:Text(
+           //      "I am popa",style: TextStyle(
+           //    color: Colors.white
+           //  ),),
+           //    decoration: BoxDecoration(
+           //      color: Colors.purple
+           //    ),
+           //
+           //  ),
+             UserAccountsDrawerHeader(
+                 accountName: Text("Aakash"),
+                 accountEmail:Text("Aakashkumar1332@gmail.com"),
+               currentAccountPicture:CircleAvatar(
+                 backgroundImage: NetworkImage("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80"),
+               ) ,
+             ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Account"),
+              subtitle: Text("personal"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text("Email"),
+              subtitle: Text("Aakashkumar1332@gmail.com",style: TextStyle(fontSize: 12.5),),
+              trailing: Icon(Icons.send),
+            )
+          ],
+
+        )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          print("Button pressed");
+        },
+        child: Icon(Icons.edit),
+      ),
+    );
+  }
+}
