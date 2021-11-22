@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+import 'package:untitled/Drawer.dart';
+import 'bg_image.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String _chainge="Click me to chainge";
+  TextEditingController _controller=TextEditingController();
+  @override
+  void initSate(){
+    super.initState();
+  }
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        title: Text("My app"),
+
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: SingleChildScrollView(
+          child: Card(
+
+
+          ),
+        ),
+      ),
+      drawer: Mydrawer(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          print("Button pressed");
+          setState(() {
+            _chainge=_controller.text ;
+          });
+        },
+        child: Icon(Icons.refresh),
+      ),
+    );
+  }
+}
