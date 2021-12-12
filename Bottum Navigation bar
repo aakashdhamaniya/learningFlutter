@@ -1,0 +1,17 @@
+bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.pinkAccent,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_balance_wallet, color: Colors.lightGreen,),title: Text("wallet",style:TextStyle(color: Colors.lightGreen) ,),
+
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_shopping_cart,color: Colors.lightGreen,),title: Text("cart",style: TextStyle(color: Colors.lightGreen),),
+
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle,color: Colors.lightGreen,),title: Text("Profile",style: TextStyle(color: Colors.lightGreen),),
+
+          ),
+        ],
+      ),
