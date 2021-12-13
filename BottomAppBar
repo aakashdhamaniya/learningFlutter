@@ -1,0 +1,49 @@
+BottomAppBar(
+      elevation: 10,
+      shape: CircularNotchedRectangle(),
+      color: Colors.transparent,
+      child: Container(
+
+        height: 40.0,
+        decoration:BoxDecoration(
+            borderRadius: BorderRadius.only(topLeft:Radius.circular(50.0),
+                topRight:Radius.circular(50.0) ),
+
+            color: Colors.black
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+
+              height: 50,
+              width: MediaQuery.of(context).size.width/2-40,
+
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(Icons.account_circle,color: Colors.yellow,),
+
+
+                ],
+              ),
+
+            ),
+            Container(
+              height: 50,
+              width: MediaQuery.of(context).size.width/2-40,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(Icons.account_balance_wallet,color: Colors.yellow,),
+
+                ],
+              ),
+
+            )
+
+          ],
+        ),
+      ),
+
+    );
